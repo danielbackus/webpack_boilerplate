@@ -1,0 +1,40 @@
+{
+  "name": "webpack_boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "npx jest src/**/*.test.js",
+    "test:integration": "npx jest src/**/*.spec.js",
+    "build": "npx webpack --config webpack.config.js",
+    "build:dev": "npx webpack --config webpack.dev.config.js",
+    "watch:dev": "npx webpack --watch --config webpack.dev.config.js",
+    "start:api": "node dist/api/main/js",
+    "start:dev": "npm run watch:dev && npx npm-run-all --parallel start:dev:api"
+  },
+  "keywords": [
+    "webpack",
+    "boilerplate"
+  ],
+  "author": "Daniel Backus",
+  "license": "0BSD",
+  "devDependencies": {
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "restify": "^8.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx pretty-quick --staged",
+      "pre-push": "npm run test"
+    }
+  }
+}
