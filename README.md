@@ -64,12 +64,13 @@
       }
     ];
     ```
-- Next, we add the dev config. This is the same as prod with the following changes:
-  - ```
+- Next, we add the dev config in `webpack.dev.config.js`. This is the same as prod with the following changes:
+  - ```js
     {
       // above here the config is same as prod
       mode: 'development',
     }
+    ```
 - Next, add our build and run scripts.
   - ```json
     "scripts": {
@@ -82,7 +83,7 @@
       // this would allow you to run multiple webpacked apps in parallel
       // e.g. an api server and a static webserver
       // simply by adding a new script and appending its name to the end of `start:dev` script
-      "start:dev": "npm run watch:dev && npx npm-run-all --parallel start:dev:api"
+      "start:dev": "npm run watch:dev && npx npm-run-all --parallel start:api"
     }
     ```
 - So what have we accomplished? Well:
