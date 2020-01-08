@@ -1,6 +1,6 @@
-import utils from '@lib/utils';
+import { logger } from '@lib/utils';
 
-export const connect = () => {
-  // connect to database and return instance
-  return;
+export const connect = async () => {
+  logger.log('connecting to database');
+  return Promise.resolve({});
 };
