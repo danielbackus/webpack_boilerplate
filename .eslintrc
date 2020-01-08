@@ -1,0 +1,23 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": "problems",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true
+      }
+    ],
+    "max-params": [
+      "error",
+      3
+    ]
+  }
+}
